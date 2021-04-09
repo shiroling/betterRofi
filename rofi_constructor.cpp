@@ -28,7 +28,6 @@ class rofi {
 			exit(EXIT_FAILURE);
 	    	
 	    printf("the choice is of .text is: %s", choice);
-		system("rm /tmp/betterRofi.tmp");
 		return (choice);
 	}
 };

@@ -1,9 +1,9 @@
 #ifndef HEADER1_H
 #define HEADER1_H
 
-class rofi;
+// class rofi;
 
-const char* rofi::text(rofi rf, char* hint);
+// const char* rofi::text(rofi rf, char* hint);
 
 
 

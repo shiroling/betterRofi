@@ -1,0 +1,17 @@
+ /*
+ * Change the colorscheme for every menu simply by editing this file...
+ *
+ * Available Color Schemes
+ * // Dark
+ * material-dark/amber			material-dark/blue		material-dark/blue_grey		material-dark/brown		material-dark/cyan			material-dark/deep_orange
+ * material-dark/deep_purple	material-dark/green		material-dark/grey			material-dark/indigo	material-dark/light_blue	material-dark/light_green
+ * material-dark/lime			material-dark/orange	material-dark/pink			material-dark/purple	material-dark/red			material-dark/teal
+ * material-dark/yellow
+ *
+ * // Other
+ * adapta, adapta-nokto, arc, arc-dark, adwaita, gruvbox, dark
+ * armchair, darkpink, fresh, inside, party, sirin
+ *
+ */
+
+@import "material-dark/red.rasi"

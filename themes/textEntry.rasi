@@ -1,0 +1,22 @@
+@import "colors_textEntry.rasi"
+
+* {
+    background-color:       @background;
+    text-color:             @foreground;
+	font:				 	"monospace 12";
+}
+
+window {
+    width:      			500px;
+    padding:    			25px;
+    border:					0px;
+    border-radius:          0px;
+    border-color:           @accent;
+    location:               center;
+    y-offset:               -20px;
+}
+
+entry {
+    expand: 				true;
+    text-color:				@accent;
+}

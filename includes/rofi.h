@@ -10,6 +10,7 @@ public:
 	char theme[32];
 
 	int text(rofi rf);
+	int choice(rofi rf);
 	char * getAnswer(char *choice);
 	int getLength(char outputFile[20]);
 };

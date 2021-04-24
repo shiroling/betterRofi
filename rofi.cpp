@@ -3,11 +3,9 @@
 
 int rofi::text(rofi rf)
 {
-	char outputFile[20];
-	strcpy(outputFile, "/tmp/betterRofi.tmp");
-
-	char *command = (char*)malloc(sizeof("bash -c 'rofi -dmenu -i -no-fixed-num-lines -theme $HOME/.config/betterRofi/themes/ -p \": \" > '")
-		 						+ sizeof(rf.theme) + sizeof(rf.hint) + sizeof(outputFile));
+	char outputFile[20] = "/tmp/betterRofi.tmp";
+	char *command = (char*) malloc( sizeof("bash -c 'rofi -dmenu -i -no-fixed-num-lines -theme $HOME/.config/betterRofi/themes/ -p \": \" > '")
+		 						+ sizeof(rf.theme) + sizeof(rf.hint) + sizeof(outputFile) );
 	if (command == NULL)
 		exit(EXIT_FAILURE);
 
@@ -18,6 +16,12 @@ int rofi::text(rofi rf)
 	free(command);
 
 	return getLength(outputFile);
+}
+
+int rofi::choice(rofi rf)
+{
+	// to do ...
+	return 0;
 }
 
 int rofi::getLength(char outputFile[20])

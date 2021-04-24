@@ -11,4 +11,5 @@ int main(int argc, char const *argv[])
 
 	char *answer = (char*)malloc( sizeof(char) * length);
 	test.getAnswer(answer);
+	printf("%s\n", answer);
 }

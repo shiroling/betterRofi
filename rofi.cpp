@@ -9,7 +9,7 @@ int rofi::text(rofi rf)
 	if (command == NULL)
 		exit(EXIT_FAILURE);
 
-	sprintf(command, "bash -c 'rofi -dmenu -i -no-fixed-num-lines -theme $HOME/.config/betterRofi/themes/%s -p \"%s: \" > %s'",
+	sprintf(command, "bash -c 'rofi -dmenu -i -no-fixed-num-lines -theme %s -p \"%s: \" > %s'",
 			rf.theme, rf.hint, outputFile);
 
 	system(command);
@@ -18,9 +18,10 @@ int rofi::text(rofi rf)
 	return getLength(outputFile);
 }
 
-int rofi::choice(rofi rf)
+int rofi::choice(char cfg[25], char outputFile[20])
 {
-	// to do ...
+	// sprintf("bash -c \"echo -e \"%s\" | rofi -theme ~/.config/betterRofi/themes/%s -p %s -dmenu -selected-row 1 > %s"
+	//	,options, theme, hint, file);
 	return 0;
 }
 

@@ -9,7 +9,7 @@ RofiContainer::RofiContainer() {
 	{
 		strcpy(this->M_theme, "/home/Shiker/.config/rofi/default.rasi");
 	}else{
-			strcpy(this->M_theme, "");
+		strcpy(this->M_theme, "");
 	}
 }
 //print the base command, the used sheel, the options and the theme.

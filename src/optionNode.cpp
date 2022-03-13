@@ -1,5 +1,13 @@
 #include "optionNode.h"
 
+OptNode::OptNode() {
+	strcpy(this->M_name, "");
+	this->M_type = Rtype::null;
+	strcpy(this->M_argument, "");
+	this->M_next = NULL;
+	this->M_child = NULL;
+}
+
 OptNode::OptNode(const char name[NAME_BUFFER], Rtype type, const char argument[ARG_BUFFER]) {
 	strncpy(this->M_name, name, NAME_BUFFER);
 	this->M_type = type;
@@ -9,7 +17,11 @@ OptNode::OptNode(const char name[NAME_BUFFER], Rtype type, const char argument[A
 }
 
 void OptNode::setNext(OptNode *next) {
-	this->M_next = next;
+	OptNode *temp = this;
+	while(temp->M_next != NULL) {
+		temp = temp->M_next;
+	}
+	temp->M_next = next;
 }
 
 void OptNode::setChild(OptNode *child) {
@@ -72,14 +84,27 @@ void OptNode::printList() {
 		return;
 	}
 	this->M_next->printList();
-
 }
 
-/*
-void setName(char* name);
-void setType(char* base); 
-void setArg(char* argument);
-*/
+int* OptNode::getOptStringLen(int *optSringLen) {
+	*optSringLen += strlen(this->M_name) + 1;
 
+	if (this->M_next != NULL)
+		this->M_next->getOptStringLen(optSringLen);
 
+	return optSringLen;
+}
 
+	char* OptNode::getOptionString() {
+	int len;
+	char myChar = '\n';
+	char *output = (char*)calloc(*this->getOptStringLen(&len), sizeof(char));	
+
+	OptNode *temp = this;
+	do {
+		strcat(output, temp->M_name);
+		strncat(output, &myChar, 1);
+		temp = temp->M_next;
+	} while(temp != NULL);
+	return output;
+}

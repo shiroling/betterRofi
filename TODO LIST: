@@ -1,0 +1,6 @@
+TODO LIST:
+- code the RofiContainer::Launch() function.
+	- finish coding the RofiContainer::getCmdString().
+
+- make the wole config interpreting thing...
+
